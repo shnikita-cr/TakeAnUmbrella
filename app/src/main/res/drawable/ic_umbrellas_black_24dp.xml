@@ -1,0 +1,20 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Outer circle (magnifying glass lens) -->
+    <path
+        android:fillColor="#FF000000"
+        android:strokeWidth="1.5"
+        android:strokeColor="#FF000000"
+        android:pathData="M10,4 A6,6 0 1,1 4,10 A6,6 0 0,1 10,4" />
+
+    <!-- Handle -->
+    <path
+        android:fillColor="#FF000000"
+        android:strokeWidth="1.5"
+        android:strokeColor="#FF000000"
+        android:pathData="M14,14 L20,20" />
+</vector>
