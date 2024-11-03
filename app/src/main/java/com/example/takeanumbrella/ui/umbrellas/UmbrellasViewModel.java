@@ -1,16 +1,16 @@
-package com.example.takeanumbrella.ui.notifications;
+package com.example.takeanumbrella.ui.umbrellas;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class UmbrellasViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public UmbrellasViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("This is umbrellas fragment");
     }
 
     public LiveData<String> getText() {
