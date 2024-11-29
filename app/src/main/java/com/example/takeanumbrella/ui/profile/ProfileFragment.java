@@ -30,10 +30,10 @@ public class ProfileFragment extends Fragment implements SwipeRefreshLayout.OnRe
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        userName = binding.userName;
+        userName = binding.clientName;
         profileViewModel.getText().observe(getViewLifecycleOwner(), userName::setText);
 
-        textProfile = binding.textProfile;
+        textProfile = binding.profileInfo;
         profileViewModel.getText().observe(getViewLifecycleOwner(), textProfile::setText);
 
         return root;
