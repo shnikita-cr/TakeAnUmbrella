@@ -35,7 +35,7 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.swiperefreshlayout)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)

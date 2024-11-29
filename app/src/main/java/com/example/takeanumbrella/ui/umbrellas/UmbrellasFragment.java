@@ -24,8 +24,8 @@ public class UmbrellasFragment extends Fragment {
         binding = FragmentUmbrellasBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textUmbrellas;
-        umbrellasViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+//        final TextView textView = binding.textUmbrellas;
+//        umbrellasViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
