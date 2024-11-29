@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.annotation.NonNull;
 
-import com.example.takeanumbrella.data.LoginDataSource;
-import com.example.takeanumbrella.data.LoginRepository;
+import com.example.takeanumbrella.data.model.LoginDataSource;
+import com.example.takeanumbrella.data.model.LoginRepository;
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.

@@ -1,6 +1,4 @@
-package com.example.takeanumbrella.data;
-
-import com.example.takeanumbrella.data.model.LoggedInUser;
+package com.example.takeanumbrella.data.model;
 
 /**
  * Class that requests authentication and user information from the remote data source and

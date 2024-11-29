@@ -1,6 +1,4 @@
-package com.example.takeanumbrella.data;
-
-import com.example.takeanumbrella.data.model.LoggedInUser;
+package com.example.takeanumbrella.data.model;
 
 import java.io.IOException;
 

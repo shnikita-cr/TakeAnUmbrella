@@ -1,9 +1,12 @@
 package com.example.takeanumbrella.test;
 
+import static android.os.Build.VERSION_CODES.R;
+import static com.example.takeanumbrella.api.ApiConfiguration.BASE_URL;
+
 import android.util.Log;
 
-import com.example.takeanumbrella.api.ApiService;
-import com.example.takeanumbrella.data.Client;
+import com.example.takeanumbrella.data.Client.Client;
+import com.example.takeanumbrella.data.Client.ClientApiService;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -12,14 +15,13 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class UserTest {
-    final String BASE_URL = "http://192.168.45.35:8080/api/v1/";
     public void test() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        ApiService service = retrofit.create(ApiService.class);
+        ClientApiService service = retrofit.create(ClientApiService.class);
 
         Call<Client> userCall = service.getUser(5L);
         userCall.enqueue(new Callback<Client>() {

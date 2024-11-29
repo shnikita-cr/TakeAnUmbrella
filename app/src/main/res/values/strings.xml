@@ -3,15 +3,20 @@
 
     <!-- Strings related to Home -->
     <string name="title_home">Home</string>
+
     <!-- Strings related to Umbrellas -->
     <string name="title_umbrellas">Umbrellas</string>
     <string name="search_hint">Search</string>
+    <string name="rentalPlaceAddress">Location address: </string>
+    <string name="vacantUmbrellasCount">Vacant umbrellas: </string>
+
     <!-- Strings related to Profile -->
     <string name="title_profile">Profile</string>
 
     <!-- Strings related to ProfileHistoryItem -->
     <string name="rental_cost_view_text">Rental cost:</string>
     <string name="rental_duration_view_text">Rental duration:</string>
+    <string name="goToLocation">Go to Location</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -22,6 +27,6 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
-    <!-- Strings related to login -->
+
 
 </resources>

@@ -1,9 +1,8 @@
-package com.example.takeanumbrella.api.Rental;
+package com.example.takeanumbrella.data.Rental;
 
 import android.util.Log;
 
 import com.example.takeanumbrella.api.RetrofitClient;
-import com.example.takeanumbrella.data.Rental.Rental;
 
 import java.io.IOException;
 import java.util.List;

@@ -4,17 +4,22 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.takeanumbrella.R;
+import com.example.takeanumbrella.data.RentalLocation.RentalLocation;
 import com.example.takeanumbrella.databinding.FragmentUmbrellasBinding;
+
+import java.util.ArrayList;
 
 public class UmbrellasFragment extends Fragment {
 
     private FragmentUmbrellasBinding binding;
+    private ListView rentalLocationList;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -24,8 +29,16 @@ public class UmbrellasFragment extends Fragment {
         binding = FragmentUmbrellasBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-//        final TextView textView = binding.textUmbrellas;
-//        umbrellasViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        rentalLocationList = binding.rentalLocationList;
+        ArrayList<RentalLocation> rentalLocations = new ArrayList<>();
+        umbrellasViewModel.getRentalLocations().observe(getViewLifecycleOwner(), locations -> {
+            if (locations != null)
+                rentalLocations.addAll(locations);
+        });
+
+        RentalLocationAdapter adapter = new RentalLocationAdapter(getContext(), R.layout.fragment_umbrellas_places_item, rentalLocations);
+        rentalLocationList.setAdapter(adapter);
+
         return root;
     }
 

@@ -14,12 +14,12 @@ import com.example.takeanumbrella.data.Rental.Rental;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
-class RentHistoryAdapter extends ArrayAdapter<Rental> {
+class RentalHistoryAdapter extends ArrayAdapter<Rental> {
     private final LayoutInflater inflater;
     private final int layout;
     private final ArrayList<Rental> rentalList;
 
-    RentHistoryAdapter(Context context, int resource, ArrayList<Rental> products) {
+    RentalHistoryAdapter(Context context, int resource, ArrayList<Rental> products) {
         super(context, resource, products);
         this.rentalList = products;
         this.layout = resource;

@@ -1,6 +1,4 @@
-package com.example.takeanumbrella.api.Client;
-
-import com.example.takeanumbrella.data.Client;
+package com.example.takeanumbrella.data.Client;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

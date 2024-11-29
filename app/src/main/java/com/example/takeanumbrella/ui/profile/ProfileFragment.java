@@ -11,7 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.takeanumbrella.R;
+import com.example.takeanumbrella.data.Rental.Rental;
 import com.example.takeanumbrella.databinding.FragmentProfileBinding;
+
+import java.util.ArrayList;
 
 public class ProfileFragment extends Fragment {
 
@@ -31,17 +35,21 @@ public class ProfileFragment extends Fragment {
         View root = binding.getRoot();
 
         clientName = binding.clientName;
-        profileViewModel.getText().observe(getViewLifecycleOwner(), clientName::setText);
+        profileViewModel.getClientName().observe(getViewLifecycleOwner(), clientName::setText);
 
         profileInfo = binding.profileInfo;
-        profileViewModel.getText().observe(getViewLifecycleOwner(), profileInfo::setText);
+        profileViewModel.getProfileInfo().observe(getViewLifecycleOwner(), profileInfo::setText);
 
 
         rentalList = binding.rentalList;
-        rentalHistory = ProfileViewModel
+        ArrayList<Rental> rentalHistory = new ArrayList<>();
+        profileViewModel.getRentalHistory().observe(getViewLifecycleOwner(), rentals -> {
+            if (rentals != null)
+                rentalHistory.addAll(rentals);
+        });
 
-        RentHistoryAdapter adapter = new RentHistoryAdapter(getContext(), android.R.layout.fragment_profile_history_item)
-        listView.setAdapter(adapter);
+        RentalHistoryAdapter adapter = new RentalHistoryAdapter(getContext(), R.layout.fragment_profile_history_item, rentalHistory);
+        rentalList.setAdapter(adapter);
 
         return root;
     }

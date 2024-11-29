@@ -1,4 +1,4 @@
-package com.example.takeanumbrella.data;
+package com.example.takeanumbrella.data.Client;
 
 public class Client {
 

@@ -1,6 +1,4 @@
-package com.example.takeanumbrella.api.Rental;
-
-import com.example.takeanumbrella.data.Rental.Rental;
+package com.example.takeanumbrella.data.Rental;
 
 import java.util.List;
 

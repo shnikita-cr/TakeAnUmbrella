@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel;
 
 import android.util.Patterns;
 
-import com.example.takeanumbrella.data.LoginRepository;
-import com.example.takeanumbrella.data.Result;
+import com.example.takeanumbrella.data.model.LoginRepository;
+import com.example.takeanumbrella.data.model.Result;
 import com.example.takeanumbrella.data.model.LoggedInUser;
 import com.example.takeanumbrella.R;
 
