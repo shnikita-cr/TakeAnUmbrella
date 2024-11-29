@@ -35,6 +35,9 @@ android {
 }
 
 dependencies {
+    implementation(libs.retrofit) // Retrofit core library
+    implementation(libs.converter.gson) // Gson converter
+    implementation(libs.logging.interceptor) // OkHttp Logging for debugging
     implementation(libs.swiperefreshlayout)
     implementation(libs.appcompat)
     implementation(libs.material)
