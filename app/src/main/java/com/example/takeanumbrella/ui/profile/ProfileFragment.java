@@ -1,26 +1,26 @@
 package com.example.takeanumbrella.ui.profile;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.takeanumbrella.databinding.FragmentProfileBinding;
 
-public class ProfileFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
+public class ProfileFragment extends Fragment {
 
     private FragmentProfileBinding binding;
 
-    private TextView userName;
-    private TextView textProfile;
+    private TextView clientName;
+    private TextView profileInfo;
 
+    private ListView rentalList;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -30,11 +30,18 @@ public class ProfileFragment extends Fragment implements SwipeRefreshLayout.OnRe
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        userName = binding.clientName;
-        profileViewModel.getText().observe(getViewLifecycleOwner(), userName::setText);
+        clientName = binding.clientName;
+        profileViewModel.getText().observe(getViewLifecycleOwner(), clientName::setText);
 
-        textProfile = binding.profileInfo;
-        profileViewModel.getText().observe(getViewLifecycleOwner(), textProfile::setText);
+        profileInfo = binding.profileInfo;
+        profileViewModel.getText().observe(getViewLifecycleOwner(), profileInfo::setText);
+
+
+        rentalList = binding.rentalList;
+        rentalHistory = ProfileViewModel
+
+        RentHistoryAdapter adapter = new RentHistoryAdapter(getContext(), android.R.layout.fragment_profile_history_item)
+        listView.setAdapter(adapter);
 
         return root;
     }
@@ -43,10 +50,5 @@ public class ProfileFragment extends Fragment implements SwipeRefreshLayout.OnRe
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
-    }
-
-    @Override
-    public void onRefresh() {
-        Log.i("SwipeRefresh", "Got Swipe");
     }
 }
