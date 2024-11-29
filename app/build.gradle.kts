@@ -38,8 +38,8 @@ dependencies {
     implementation(libs.retrofit) // Retrofit core library
     implementation(libs.converter.gson) // Gson converter
     implementation(libs.logging.interceptor) // OkHttp Logging for debugging
-
-
+		
+    implementation(libs.swiperefreshlayout)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
@@ -47,6 +47,7 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
+    implementation(libs.annotation)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

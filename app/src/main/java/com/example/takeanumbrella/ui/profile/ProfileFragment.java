@@ -1,6 +1,7 @@
 package com.example.takeanumbrella.ui.profile;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,12 +10,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.takeanumbrella.databinding.FragmentProfileBinding;
 
-public class ProfileFragment extends Fragment {
+public class ProfileFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
     private FragmentProfileBinding binding;
+
+    private TextView userName;
+    private TextView textProfile;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -24,8 +30,12 @@ public class ProfileFragment extends Fragment {
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textProfile;
-        profileViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        userName = binding.userName;
+        profileViewModel.getText().observe(getViewLifecycleOwner(), userName::setText);
+
+        textProfile = binding.textProfile;
+        profileViewModel.getText().observe(getViewLifecycleOwner(), textProfile::setText);
+
         return root;
     }
 
@@ -33,5 +43,10 @@ public class ProfileFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    @Override
+    public void onRefresh() {
+        Log.i("SwipeRefresh", "Got Swipe");
     }
 }
