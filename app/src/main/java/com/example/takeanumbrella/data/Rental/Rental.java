@@ -3,8 +3,8 @@ package com.example.takeanumbrella.data.Rental;
 import java.sql.Timestamp;
 
 public class Rental {
-    private Long rentalId;
     private final Timestamp startTimeStamp;
+    private Long rentalId;
     private Timestamp endTimeStamp = null;
 
 

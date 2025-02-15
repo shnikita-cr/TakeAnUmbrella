@@ -8,13 +8,13 @@ import com.example.takeanumbrella.data.Umbrella.states.UmbrellaStatus;
 public class Umbrella {
     private Long umbrellaId;
 
-    private UmbrellaSize size;
+    private final UmbrellaSize size;
 
-    private UmbrellaColor color;
+    private final UmbrellaColor color;
 
-    private UmbrellaStatus status;
+    private final UmbrellaStatus status;
 
-    private RentalLocation location;
+    private final RentalLocation location;
 
 
     public Umbrella(UmbrellaSize size, UmbrellaColor color, UmbrellaStatus status, RentalLocation location) {
