@@ -14,6 +14,21 @@ public class Client {
         this.passwordHash = passwordHash;
     }
 
+    public Client() {
+        id = null;
+        name = null;
+        passwordHash = null;
+        email = null;
+    }
+
+    public Client(String username, String password) {
+        email = username;
+        passwordHash = password;
+
+        name = null;
+        id = null;
+    }
+
     @Override
     public String toString() {
         return "User{" +

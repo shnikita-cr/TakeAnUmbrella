@@ -1,6 +1,5 @@
 package com.example.takeanumbrella.test;
 
-import static android.os.Build.VERSION_CODES.R;
 import static com.example.takeanumbrella.api.ApiConfiguration.BASE_URL;
 
 import android.util.Log;
@@ -23,7 +22,7 @@ public class UserTest {
 
         ClientApiService service = retrofit.create(ClientApiService.class);
 
-        Call<Client> userCall = service.getUser(5L);
+        Call<Client> userCall = service.getClientInfo(5L);
         userCall.enqueue(new Callback<Client>() {
             @Override
             public void onResponse(Call<Client> call, Response<Client> response) {

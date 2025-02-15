@@ -6,11 +6,14 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 
-public interface ClientApiService {//todo нужно ли несколько разных интерфейсов для зонтиков, пользователей и тд
+public interface ClientApiService {
 
     @GET("clients/{id}")
-    Call<Client> getUser(@Path("id") Long userId);
+    Call<Client> getClientInfo(@Path("id") Long userId);
 
-    @POST("clients")
-    Call<Client> createUser(@Body Client client);
+    @GET("clients/test")
+    Call<ClientTestResponse> testClient(@Body Client client);
+
+    @POST("clients/new")
+    Call<Client> createClient(@Body Client client);
 }
