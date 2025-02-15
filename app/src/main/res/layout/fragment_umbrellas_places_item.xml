@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,7 +12,7 @@
         android:orientation="horizontal">
 
         <TableLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:baselineAligned="false">
 
@@ -20,16 +21,42 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/rentalLocationListNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rentalLocationListNumber"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <TextView
+                    android:id="@+id/rentalLocationListNumberValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:tooltipText="@string/rentalLocationListNumberValue"
+                    tools:text="@string/rentalLocationListNumberValue" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
                     android:id="@+id/rentalPlaceAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/rentalPlaceAddress" />
+                    android:text="@string/rentalPlaceAddress"
+                    tools:text="@string/rentalPlaceAddress" />
 
                 <TextView
                     android:id="@+id/rentalPlaceAddressValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Ленина д,25" />
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:scrollHorizontally="false"
+                    android:singleLine="false"
+                    tools:text="@string/rentalPlaceAddressValue" />
+
             </TableRow>
 
             <TableRow
@@ -44,23 +71,33 @@
 
                 <TextView
                     android:id="@+id/vacantUmbrellasCountValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewStart"
+                    tools:text="@string/vacantUmbrellasCountValue" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/observeLocationButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:insetTop="10dp"
+                    android:insetBottom="10dp"
+                    android:text="@string/goToLocation" />
+
+                <Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    tools:text="34" />
+                    android:layout_weight="1" />
+
             </TableRow>
 
         </TableLayout>
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/goToLocation" />
     </LinearLayout>
 </FrameLayout>
