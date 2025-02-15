@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface RentalLocationApiService {
-    @GET("places/{searchQuery}")
-    Call<List<RentalLocation>> getCityLocations(@Path("searchQuery") String searchQuery);
+    @GET("locations/{searchQuery}")
+    Call<List<RentalLocation>> getQueryLocations(@Path("searchQuery") String searchQuery);
 }

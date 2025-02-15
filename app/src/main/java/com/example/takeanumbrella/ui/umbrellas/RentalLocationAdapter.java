@@ -1,7 +1,6 @@
 package com.example.takeanumbrella.ui.umbrellas;
 
 import android.content.Context;
-import android.icu.text.SimpleDateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.example.takeanumbrella.R;
-import com.example.takeanumbrella.data.Rental.Rental;
 import com.example.takeanumbrella.data.RentalLocation.RentalLocation;
 
 import java.util.ArrayList;
@@ -40,18 +38,19 @@ public class RentalLocationAdapter extends ArrayAdapter<RentalLocation> {
 
         final RentalLocation rentalLocation = rentalLocationList.get(position);
 
-        viewHolder.rentalPlaceAddressValue.setText("Ленина 24");
-        viewHolder.vacantUmbrellasCountValue.setText("18");
+        viewHolder.rentalLocationListNumberValue.setText(String.valueOf(position + 1));
+        viewHolder.rentalPlaceAddressValue.setText(rentalLocation.getAdress());
+        viewHolder.vacantUmbrellasCountValue.setText(String.valueOf(rentalLocation.getValidUmbrellaCount()));
         return convertView;
     }
 
     private static class ViewHolder {
-        final TextView rentalPlaceAddressValue, vacantUmbrellasCountValue;
+        final TextView rentalPlaceAddressValue, vacantUmbrellasCountValue, rentalLocationListNumberValue;
 
         ViewHolder(View view) {
             rentalPlaceAddressValue = view.findViewById(R.id.rentalPlaceAddressValue);
             vacantUmbrellasCountValue = view.findViewById(R.id.vacantUmbrellasCountValue);
-
+            rentalLocationListNumberValue = view.findViewById(R.id.rentalLocationListNumberValue);
         }
     }
 }

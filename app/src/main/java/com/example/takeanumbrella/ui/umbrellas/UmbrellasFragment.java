@@ -31,7 +31,7 @@ public class UmbrellasFragment extends Fragment {
 
         rentalLocationList = binding.rentalLocationList;
         ArrayList<RentalLocation> rentalLocations = new ArrayList<>();
-        umbrellasViewModel.getRentalLocations().observe(getViewLifecycleOwner(), locations -> {
+        umbrellasViewModel.getRentalLocations("s").observe(getViewLifecycleOwner(), locations -> {
             if (locations != null)
                 rentalLocations.addAll(locations);
         });
