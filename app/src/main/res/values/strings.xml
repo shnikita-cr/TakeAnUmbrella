@@ -6,7 +6,7 @@
 
     <!-- Strings related to Umbrellas -->
     <string name="title_umbrellas">Umbrellas</string>
-    <string name="search_hint">Search</string>
+    <string name="search_hint">Начните ввод адреса</string>
 
     <string name="rentalPlaceAddress">Location address: </string>
     <string name="rentalPlaceAddressValue">Васильевский остров, Средний проспект, 5</string>
