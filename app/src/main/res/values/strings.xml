@@ -17,13 +17,16 @@
     <string name="rentalLocationListNumber">Location #: </string>
     <string name="rentalLocationListNumberValue">344</string>
 
+    <string name="goToLocation">Go to Location</string>
+
     <!-- Strings related to Profile -->
     <string name="title_profile">Profile</string>
 
     <!-- Strings related to ProfileHistoryItem -->
     <string name="rental_cost_view_text">Rental cost:</string>
     <string name="rental_duration_view_text">Rental duration:</string>
-    <string name="goToLocation">Go to Location</string>
+    <string name="rental_status">Rental status</string>
+    <string name="detail">View details</string>
 
     <!-- Strings related to login -->
     <string name="title_login">Login/Register</string>

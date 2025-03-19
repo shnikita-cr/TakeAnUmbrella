@@ -2,6 +2,7 @@ package com.example.takeanumbrella.ui.profile;
 
 import android.content.Context;
 import android.icu.text.SimpleDateFormat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,17 +45,26 @@ class RentalHistoryAdapter extends ArrayAdapter<Rental> {
         viewHolder.rentalStartDate.setText(new SimpleDateFormat("yyyy.MM.dd").format(timestamp));
         viewHolder.rentalCostViewValue.setText("50 USD");
         viewHolder.rentalDurationValue.setText("50 minutes");
+        viewHolder.rentalStatusValue.setText("OK");
+
         return convertView;
     }
 
     private static class ViewHolder {
-        final TextView rentalNumber, rentalStartDate, rentalCostViewValue, rentalDurationValue;
+        final TextView rentalNumber, rentalStartDate, rentalCostViewValue, rentalDurationValue, rentalStatusValue;
 
         ViewHolder(View view) {
             rentalNumber = view.findViewById(R.id.rentalNumber);
             rentalCostViewValue = view.findViewById(R.id.rentalCostViewValue);
             rentalStartDate = view.findViewById(R.id.rentalStartDate);
             rentalDurationValue = view.findViewById(R.id.rentalDurationValue);
+            rentalStatusValue = view.findViewById(R.id.rentalStatusValue);
+            view.findViewById(R.id.rental_button).setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    Log.d("demo", "onClick: Click for more" +"detail");}
+            });
+
         }
     }
 }
