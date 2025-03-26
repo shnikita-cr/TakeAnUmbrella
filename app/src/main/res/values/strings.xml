@@ -29,16 +29,33 @@
     <string name="detail">View details</string>
 
     <!-- Strings related to login -->
-    <string name="title_login">Login/Register</string>
+    <string name="title_login">Вход/Регистрация</string>
 
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome!"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+    <string name="prompt_login_email">Почта</string>
+    <string name="prompt_login_password">Пароль</string>
+    <string name="action_sign_in">Войти</string>
+    <string name="action_sign_in_short">Войти</string>
+    <string name="welcome_login">"Добро пожаловать!"</string>
+    <string name="invalid_username">Некорректное имя пользователя</string>
+    <string name="invalid_password">Пароль должен содержать минимум 5 знаков</string>
+    <string name="login_failed">Вход неудачен</string>
+    <string name="no_account_text">Нет аккаунта?</string>
+    <string name="register_button_text">Регистрация</string>
+
+    <!--         Strings related to register -->
+    <string name="title_register">Регистрация</string>
+    <string name="prompt_register_name_hint">Иван</string>
+    <string name="prompt_register_name">Имя</string>
+    <string name="prompt_register_phone_hint">+79999999999</string>
+    <string name="prompt_register_phone">Телефон</string>
+    <string name="prompt_register_email_hint">ivan@mmail.ru</string>
+    <string name="prompt_register_email">Почта</string>
+    <string name="prompt_register_password_hint">********</string>
+    <string name="prompt_register_password">Придумайте пароль</string>
+    <string name="prompt_register_password_repeat_hint">********</string>
+    <string name="prompt_register_password_repeat">Повторите пароль</string>
+    <string name="action_register">Зарегистрироваться</string>
+    <string name="welcome_register">"Welcome!"</string>
 
 
 </resources>
