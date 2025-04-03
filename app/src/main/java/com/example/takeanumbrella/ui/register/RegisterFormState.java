@@ -15,7 +15,11 @@ public class RegisterFormState {
     private final Integer passwordRepeatError;
     private final boolean isDataValid;
 
-    RegisterFormState(@Nullable Integer nameError, @Nullable Integer phoneError, @Nullable Integer emailError, @Nullable Integer passwordError, @Nullable Integer passwordRepeatError) {
+    RegisterFormState(@Nullable Integer nameError,
+                      @Nullable Integer phoneError,
+                      @Nullable Integer emailError,
+                      @Nullable Integer passwordError,
+                      @Nullable Integer passwordRepeatError) {
         this.nameError = nameError;
         this.phoneError = phoneError;
         this.emailError = emailError;

@@ -16,16 +16,16 @@ public class RegisterDataSource {
             String password) {
         try {
             // TODO: handle loggedInUser authentication
-            Client client = new Client(name, phone,email,password);
+            Client client = new Client(name, phone, email, password);
             ClientTestResponse response = ClientController.testClient(client);
             if (response.getResult()) {
                 Client freshCLient = response.getClient();
                 return new Result.Success<>(freshCLient);
             } else {
-                return new Result.Error(new RuntimeException("Client not found"));
+                return new Result.Error(new RuntimeException("Client not registered"));
             }
         } catch (Exception e) {
-            return new Result.Error(new IOException("Error logging in", e));
+            return new Result.Error(new IOException("Register error", e));
         }
     }
 }

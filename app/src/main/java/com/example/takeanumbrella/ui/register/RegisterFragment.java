@@ -59,6 +59,8 @@ public class RegisterFragment extends Fragment {
         registerButton = binding.registerButton;
         loadingProgressBar = binding.loading;
 
+//        registerButton.setEnabled(false);
+
         registerViewModel.getRegisterFormState().observe(getViewLifecycleOwner(), new Observer<RegisterFormState>() {
             @Override
             public void onChanged(@Nullable RegisterFormState registerFormState) {
@@ -126,7 +128,6 @@ public class RegisterFragment extends Fragment {
         clientName.addTextChangedListener(afterTextChangedListener);
         clientPassword.addTextChangedListener(afterTextChangedListener);
         clientPassword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
@@ -157,7 +158,7 @@ public class RegisterFragment extends Fragment {
 
     private void updateUiWithUser(RegisteredUserView model) {
         String welcome = getString(R.string.welcome_register) + model.getDisplayName();
-        // TODO : initiate successful logged in experience
+        // TODO : initiate successful registered experience
         if (getContext() != null && getContext().getApplicationContext() != null) {
             Toast.makeText(getContext().getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
         }
