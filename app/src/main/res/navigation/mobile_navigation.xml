@@ -25,13 +25,13 @@
     <fragment
         android:id="@+id/navigation_login"
         android:name="com.example.takeanumbrella.ui.login.LoginFragment"
-        android:label="fragment_login"
+        android:label="@string/title_login"
         tools:layout="@layout/fragment_login" />
 
     <fragment
         android:id="@+id/navigation_register"
         android:name="com.example.takeanumbrella.ui.register.RegisterFragment"
-        android:label="fragment_register"
+        android:label="@string/title_register"
         tools:layout="@layout/fragment_register" />
 </navigation>
 

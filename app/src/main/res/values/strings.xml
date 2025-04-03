@@ -41,10 +41,10 @@
     <string name="invalid_password">Пароль должен содержать минимум 5 знаков</string>
     <string name="login_failed">Вход неудачен</string>
     <string name="no_account_text">Нет аккаунта?</string>
-    <string name="register_button_text">Регистрация</string>
 
     <!--         Strings related to register -->
     <string name="title_register">Регистрация</string>
+
     <string name="prompt_register_name_hint">Иван</string>
     <string name="prompt_register_name">Имя</string>
     <string name="prompt_register_phone_hint">+79999999999</string>
@@ -55,8 +55,11 @@
     <string name="prompt_register_password">Придумайте пароль</string>
     <string name="prompt_register_password_repeat_hint">********</string>
     <string name="prompt_register_password_repeat">Повторите пароль</string>
-    <string name="action_register">Зарегистрироваться</string>
+    <string name="register_button_text">Зарегистрироваться</string>
     <string name="welcome_register">"Welcome!"</string>
+
+<!--    <string name="invalid_password">Пароль должен содержать минимум 5 знаков</string>-->
+    <string name="registration_failed">Регистрация неудачна</string>
 
 
 </resources>
