@@ -12,9 +12,13 @@
         android:orientation="vertical">
 
         <SearchView
+            android:id="@+id/searchView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layoutDirection="rtl" />
+            android:inputType="text"
+            android:labelFor="@id/rentalLocationList"
+            android:layoutDirection="rtl"
+            android:queryHint="@string/search_hint" />
 
         <ListView
             android:id="@+id/rentalLocationList"

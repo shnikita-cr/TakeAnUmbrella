@@ -11,6 +11,7 @@ import com.example.takeanumbrella.data.RentalLocation.RentalLocationController;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -37,7 +38,7 @@ public class UmbrellasViewModel extends ViewModel {
 
         try {
             rentalLocations = new MutableLiveData<>(future.get());
-            Log.d("rentalLocations", rentalLocations.getValue().get(0).toString());
+            Log.d("rentalLocations", String.valueOf(Objects.requireNonNull(rentalLocations.getValue()).size()));
         } catch (Exception e) {
             Log.e("RentalLocationError", e.toString());
             rentalLocations = new MutableLiveData<>(Collections.emptyList());

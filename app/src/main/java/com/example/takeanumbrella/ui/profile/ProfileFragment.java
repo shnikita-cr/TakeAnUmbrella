@@ -1,5 +1,7 @@
 package com.example.takeanumbrella.ui.profile;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +35,9 @@ public class ProfileFragment extends Fragment {
 
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        SharedPreferences preferences = requireActivity().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        long clientId = preferences.getLong("clientId", -1); // -1 nếu không tìm thấy
+
 
         clientName = binding.clientName;
         profileViewModel.getClientName().observe(getViewLifecycleOwner(), clientName::setText);
@@ -43,7 +48,7 @@ public class ProfileFragment extends Fragment {
 
         rentalList = binding.rentalList;
         ArrayList<Rental> rentalHistory = new ArrayList<>();
-        profileViewModel.getRentalHistory().observe(getViewLifecycleOwner(), rentals -> {
+        profileViewModel.getRentalHistory(clientId).observe(getViewLifecycleOwner(), rentals -> {
             if (rentals != null)
                 rentalHistory.addAll(rentals);
         });

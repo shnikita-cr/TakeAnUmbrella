@@ -62,11 +62,35 @@
             <TextView
                 android:id="@+id/rentalDurationValue"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="31dp"
                 android:layout_weight="1"
                 tools:text="50 минут" />
         </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
+            <TextView
+                android:id="@+id/rentalStatusView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rental_status"/>
+
+            <TextView
+                android:id="@+id/rentalStatusValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="OK" />
+        </TableRow>
+        <Button
+            android:id="@+id/rental_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail" />
     </TableLayout>
+
+
 
 </FrameLayout>
