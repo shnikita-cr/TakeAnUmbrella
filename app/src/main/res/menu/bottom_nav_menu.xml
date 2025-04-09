@@ -9,7 +9,7 @@
     <item
         android:id="@+id/navigation_umbrellas"
         android:icon="@drawable/ic_umbrellas_black_24dp"
-        android:title="@string/title_umbrellas" />
+        android:title="@string/title_rental_locations" />
 
     <item
         android:id="@+id/navigation_profile"

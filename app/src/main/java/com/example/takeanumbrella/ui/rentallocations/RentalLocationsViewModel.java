@@ -1,4 +1,4 @@
-package com.example.takeanumbrella.ui.umbrellas;
+package com.example.takeanumbrella.ui.rentallocations;
 
 import android.util.Log;
 
@@ -17,12 +17,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class UmbrellasViewModel extends ViewModel {
+public class RentalLocationsViewModel extends ViewModel {
 
     private MutableLiveData<List<RentalLocation>> rentalLocations;
 
 
-    public UmbrellasViewModel() {
+    public RentalLocationsViewModel() {
         rentalLocations = new MutableLiveData<>(new ArrayList<>());
     }
 

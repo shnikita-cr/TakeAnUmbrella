@@ -1,4 +1,4 @@
-package com.example.takeanumbrella.ui.umbrellas;
+package com.example.takeanumbrella.ui.rentallocations;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,12 +13,12 @@ import com.example.takeanumbrella.data.RentalLocation.RentalLocation;
 import java.util.ArrayList;
 
 
-public class RentalLocationAdapter extends ArrayAdapter<RentalLocation> {
+public class RentalLocationsAdapter extends ArrayAdapter<RentalLocation> {
     private final LayoutInflater inflater;
     private final int layout;
     private final ArrayList<RentalLocation> rentalLocationList;
 
-    RentalLocationAdapter(Context context, int resource, ArrayList<RentalLocation> rentalLocationList) {
+    RentalLocationsAdapter(Context context, int resource, ArrayList<RentalLocation> rentalLocationList) {
         super(context, resource, rentalLocationList);
         this.rentalLocationList = rentalLocationList;
         this.layout = resource;
@@ -27,13 +27,13 @@ public class RentalLocationAdapter extends ArrayAdapter<RentalLocation> {
 
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        final RentalLocationAdapter.ViewHolder viewHolder;
+        final RentalLocationsAdapter.ViewHolder viewHolder;
         if (convertView == null) {
             convertView = inflater.inflate(this.layout, parent, false);
-            viewHolder = new RentalLocationAdapter.ViewHolder(convertView);
+            viewHolder = new RentalLocationsAdapter.ViewHolder(convertView);
             convertView.setTag(viewHolder);
         } else {
-            viewHolder = (RentalLocationAdapter.ViewHolder) convertView.getTag();
+            viewHolder = (RentalLocationsAdapter.ViewHolder) convertView.getTag();
         }
 
         final RentalLocation rentalLocation = rentalLocationList.get(position);
