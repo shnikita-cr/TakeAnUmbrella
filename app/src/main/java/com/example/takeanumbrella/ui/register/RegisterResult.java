@@ -7,6 +7,7 @@ import com.example.takeanumbrella.ui.userview.UserView;
 public class RegisterResult {
     @Nullable
     private UserView success;
+  
     @Nullable
     private Integer error;
 
