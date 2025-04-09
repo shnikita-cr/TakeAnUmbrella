@@ -1,9 +1,9 @@
 package com.example.takeanumbrella.ui.userview;
 
-public class UserView {
+public class ClientView {
     private final String displayName;
 
-    public UserView(String displayName) {
+    public ClientView(String displayName) {
         this.displayName = displayName;
     }
 

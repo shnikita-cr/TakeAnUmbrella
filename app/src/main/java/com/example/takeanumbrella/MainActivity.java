@@ -10,7 +10,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.takeanumbrella.databinding.ActivityMainBinding;
-import com.example.takeanumbrella.test.UserTest;
+import com.example.takeanumbrella.test.ClientTest;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        UserTest test = new UserTest();
+        ClientTest test = new ClientTest();
         test.test();
     }
 
