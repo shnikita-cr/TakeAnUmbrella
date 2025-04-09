@@ -30,6 +30,11 @@ public class LoginFragment extends Fragment {
 
     private LoginViewModel loginViewModel;
     private FragmentLoginBinding binding;
+    private EditText loginEmailText;
+    private EditText passwordEditText;
+    private Button loginButton;
+    private Button registerButton;
+    private ProgressBar loadingProgressBar;
 
     @Nullable
     @Override
@@ -39,7 +44,6 @@ public class LoginFragment extends Fragment {
 
         binding = FragmentLoginBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
     }
 
     @Override
@@ -48,11 +52,11 @@ public class LoginFragment extends Fragment {
         loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
 
-        final EditText usernameEditText = binding.loginEmail;
-        final EditText passwordEditText = binding.loginPassword;
-        final Button loginButton = binding.loginButton;
-        final Button registerButton = binding.registerButton;
-        final ProgressBar loadingProgressBar = binding.loading;
+        loginEmailText = binding.loginEmail;
+        passwordEditText = binding.loginPassword;
+        loginButton = binding.loginButton;
+        registerButton = binding.registerButton;
+        loadingProgressBar = binding.loading;
 
         loginViewModel.getLoginFormState().observe(getViewLifecycleOwner(), new Observer<LoginFormState>() {
             @Override
@@ -61,8 +65,8 @@ public class LoginFragment extends Fragment {
                     return;
                 }
                 loginButton.setEnabled(loginFormState.isDataValid());
-                if (loginFormState.getUsernameError() != null) {
-                    usernameEditText.setError(getString(loginFormState.getUsernameError()));
+                if (loginFormState.getEmailError() != null) {
+                    loginEmailText.setError(getString(loginFormState.getEmailError()));
                 }
                 if (loginFormState.getPasswordError() != null) {
                     passwordEditText.setError(getString(loginFormState.getPasswordError()));
@@ -99,18 +103,18 @@ public class LoginFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                loginViewModel.loginDataChanged(usernameEditText.getText().toString(),
+                loginViewModel.loginDataChanged(loginEmailText.getText().toString(),
                         passwordEditText.getText().toString());
             }
         };
-        usernameEditText.addTextChangedListener(afterTextChangedListener);
+        loginEmailText.addTextChangedListener(afterTextChangedListener);
         passwordEditText.addTextChangedListener(afterTextChangedListener);
         passwordEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    loginViewModel.login(usernameEditText.getText().toString(),
+                    loginViewModel.login(loginEmailText.getText().toString(),
                             passwordEditText.getText().toString());
                 }
                 return false;
@@ -121,7 +125,7 @@ public class LoginFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 loadingProgressBar.setVisibility(View.VISIBLE);
-                loginViewModel.login(usernameEditText.getText().toString(),
+                loginViewModel.login(loginEmailText.getText().toString(),
                         passwordEditText.getText().toString());
             }
         });
@@ -137,10 +141,12 @@ public class LoginFragment extends Fragment {
 
     private void updateUiWithUser(LoggedInUserView model) {
         String welcome = getString(R.string.welcome_login) + model.getDisplayName();
-        // TODO : initiate successful logged in experience
         if (getContext() != null && getContext().getApplicationContext() != null) {
             Toast.makeText(getContext().getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
         }
+
+        NavController navController = NavHostFragment.findNavController(this);
+        navController.navigate(R.id.navigation_home);
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {

@@ -11,7 +11,7 @@ import java.io.IOException;
  */
 public class LoginDataSource {
 
-    public Result<LoggedInClient> login(String username, String password) {
+    public Result<Client> login(String username, String password) {
         try {
             // TODO: handle loggedInUser authentication
             Client client = new Client(username, null, null, password);
