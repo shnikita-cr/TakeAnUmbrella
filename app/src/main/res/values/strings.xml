@@ -29,16 +29,40 @@
     <string name="detail">View details</string>
 
     <!-- Strings related to login -->
-    <string name="title_login">Login/Register</string>
+    <string name="title_login">Вход</string>
 
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome!"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+    <string name="prompt_login_email">Почта</string>
+    <string name="prompt_login_password">Пароль</string>
+    <string name="action_sign_in">Войти</string>
+    <string name="action_sign_in_short">Войти</string>
+    <string name="welcome_login">Добро пожаловать!</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    <string name="invalid_username">Некорректное имя пользователя</string>
+    <string name="login_failed">Вход неудачен</string>
+    <string name="no_account_text">Нет аккаунта?</string>
+
+    <!--         Strings related to register -->
+    <string name="title_register">Регистрация</string>
+
+    <string name="prompt_register_name_hint">Иван</string>
+    <string name="prompt_register_name">Имя</string>
+    <string name="prompt_register_phone_hint">+79999999999</string>
+    <string name="prompt_register_phone">Телефон</string>
+    <string name="prompt_register_email_hint">ivan@mail.ru</string>
+    <string name="prompt_register_email">Почта</string>
+    <string name="prompt_register_password_hint">********</string>
+    <string name="prompt_register_password">Придумайте пароль</string>
+    <string name="prompt_register_password_repeat_hint">********</string>
+    <string name="prompt_register_password_repeat">Повторите пароль</string>
+
+    <string name="register_button_text">Зарегистрироваться</string>
+    <string name="invalid_name">Некорректное имя!</string>
+    <string name="invalid_phone">"Неверный формат телефона!"</string>
+    <string name="email_invalid">"Неверный формат почты!"</string>
+    <string name="invalid_password">Пароль должен содержать минимум 5 знаков</string>
+    <string name="invalid_passwordRepeat">"Пароли не совпадают"</string>
+    <string name="welcome_register">"Добро пожаловать"</string>
+    <string name="registration_failed">Регистрация неудачна</string>
 
 
 </resources>

@@ -59,10 +59,11 @@ class RentalHistoryAdapter extends ArrayAdapter<Rental> {
             rentalStartDate = view.findViewById(R.id.rentalStartDate);
             rentalDurationValue = view.findViewById(R.id.rentalDurationValue);
             rentalStatusValue = view.findViewById(R.id.rentalStatusValue);
-            view.findViewById(R.id.rental_button).setOnClickListener(new View.OnClickListener(){
+            view.findViewById(R.id.rental_button).setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v){
-                    Log.d("demo", "onClick: Click for more" +"detail");}
+                public void onClick(View v) {
+                    Log.d("demo", "onClick: Click for more" + "detail");
+                }
             });
 
         }

@@ -1,14 +1,11 @@
 package com.example.takeanumbrella.data.RentalLocation;
 
 public class RentalLocation {
-    private Long locationId;
-
     private final String adress;
-
     private final Coordinates location;
-
     private final RentalLocationStatus status;
     private final Long validUmbrellaCount;
+    private Long locationId;
 
 
     public RentalLocation(String address, Coordinates location, RentalLocationStatus status, Long validUmbrellaCount) {

@@ -12,7 +12,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class ClientController {
-    public static Client getClientInfo(Long clientId) {
+    public static Client getClientInfo(Long clientId) { //todo нужен ли
         Retrofit retrofit = RetrofitClient.getInstance();
 
         ClientApiService service = retrofit.create(ClientApiService.class);
@@ -28,12 +28,12 @@ public class ClientController {
         return new Client();
     }
 
-    public static Client createUser(Client client) {
+    public static Client registerClient(Client client) {
         Retrofit retrofit = RetrofitClient.getInstance();
 
         ClientApiService service = retrofit.create(ClientApiService.class);
 
-        Call<Client> clientCall = service.createClient(client);
+        Call<Client> clientCall = service.registerClient(client);
         clientCall.enqueue(new ClientCallback());
 
         try {
@@ -52,12 +52,8 @@ public class ClientController {
         Call<ClientTestResponse> clientCall = service.testClient(client);
         clientCall.enqueue(new ClientTestResponseCallback());
 
-        try {
-            return clientCall.execute().body();
-        } catch (IOException e) {
-            Log.e("clientCall IOException", e.toString());
-        }
-        return new ClientTestResponse();
+        //fixme dev test mode
+        return new ClientTestResponse(true, client);
     }
 
     private static class ClientCallback implements Callback<Client> {

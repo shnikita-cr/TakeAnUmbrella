@@ -18,7 +18,7 @@ public class ClientTestResponse {
         return result;
     }
 
-    public Client getClient() {
+    public Client getRegisteredClient() {
         return client;
     }
 }
