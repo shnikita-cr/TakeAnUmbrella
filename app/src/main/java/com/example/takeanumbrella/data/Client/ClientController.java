@@ -3,6 +3,7 @@ package com.example.takeanumbrella.data.Client;
 import android.util.Log;
 
 import com.example.takeanumbrella.api.RetrofitClient;
+import com.example.takeanumbrella.ui.register.RegisteredClient;
 
 import java.io.IOException;
 
@@ -52,12 +53,14 @@ public class ClientController {
         Call<ClientTestResponse> clientCall = service.testClient(client);
         clientCall.enqueue(new ClientTestResponseCallback());
 
-        try {
-            return clientCall.execute().body();
-        } catch (IOException e) {
-            Log.e("clientCall IOException", e.toString());
-        }
-        return new ClientTestResponse();
+        return new ClientTestResponse(true, new RegisteredClient(0L, "testName"));
+
+//        try { //fixme dev test mode
+//            return clientCall.execute().body();
+//        } catch (IOException e) {
+//            Log.e("clientCall IOException", e.toString());
+//        }
+//        return new ClientTestResponse();
     }
 
     private static class ClientCallback implements Callback<Client> {

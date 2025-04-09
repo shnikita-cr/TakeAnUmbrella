@@ -1,19 +1,19 @@
-package com.example.takeanumbrella.ui.register;
+package com.example.takeanumbrella.data.model;
 
 /**
  * Data class that captures user information for logged in users retrieved from LoginRepository
  */
-public class RegisteredUser {
+public class LoggedInClient {
 
-    private final String userId;
+    private final Long userId;
     private final String displayName;
 
-    public RegisteredUser(String userId, String displayName) {
+    public LoggedInClient(Long userId, String displayName) {
         this.userId = userId;
         this.displayName = displayName;
     }
 
-    public String getUserId() {
+    public Long getUserId() {
         return userId;
     }
 

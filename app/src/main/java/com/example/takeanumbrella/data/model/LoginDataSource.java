@@ -3,6 +3,7 @@ package com.example.takeanumbrella.data.model;
 import com.example.takeanumbrella.data.Client.Client;
 import com.example.takeanumbrella.data.Client.ClientController;
 import com.example.takeanumbrella.data.Client.ClientTestResponse;
+import com.example.takeanumbrella.ui.register.RegisteredClient;
 
 import java.io.IOException;
 
@@ -11,14 +12,14 @@ import java.io.IOException;
  */
 public class LoginDataSource {
 
-    public Result<LoggedInUser> login(String username, String password) {
+    public Result<LoggedInClient> login(String username, String password) {
         try {
             // TODO: handle loggedInUser authentication
-            Client client = new Client(username,null,null, password);
+            Client client = new Client(username, null, null, password);
             ClientTestResponse response = ClientController.testClient(client);
             if (response.getResult()) {
-                Client freshCLient = response.getClient();
-                return new Result.Success<>(freshCLient);
+                RegisteredClient freshClient = response.getRegisteredClient();
+                return new Result.Success<>(freshClient);
             } else {
                 return new Result.Error(new RuntimeException("Client not found"));
             }

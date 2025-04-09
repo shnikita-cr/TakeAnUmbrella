@@ -7,7 +7,6 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.takeanumbrella.R;
-import com.example.takeanumbrella.data.model.LoggedInUser;
 import com.example.takeanumbrella.data.model.RegisterRepository;
 import com.example.takeanumbrella.data.model.Result;
 
@@ -29,9 +28,9 @@ public class RegisterViewModel extends ViewModel {
     }
 
     public void register(String name, String phone, String email, String password) {
-        Result<RegisteredUser> result = registerRepository.register(name, phone, email, password);
+        Result<RegisteredClient> result = registerRepository.register(name, phone, email, password);
         if (result instanceof Result.Success) {
-            LoggedInUser data = ((Result.Success<LoggedInUser>) result).getData();
+            RegisteredClient data = ((Result.Success<RegisteredClient>) result).getData();
             registerResult.setValue(new RegisterResult(new RegisteredUserView(data.getDisplayName())));
         } else {
             registerResult.setValue(new RegisterResult(R.string.registration_failed));
@@ -84,7 +83,7 @@ public class RegisterViewModel extends ViewModel {
     }
 
     private boolean isPhoneValid(String phone) {
-        return phone != null && phone.matches(" ^[+]?[(]?[0-9]{3}[)]?[-\\s.]?[0-9]{3}[-\\s.]?[0-9]{4,6}$ ");
+        return phone != null && Patterns.PHONE.matcher(phone).matches();
     }
 
     private boolean isEmailValid(String email) {
@@ -99,14 +98,10 @@ public class RegisterViewModel extends ViewModel {
     }
 
     private boolean isPasswordValid(String password) {
-        return password != null && password.trim().length() > 5;
+        return password != null && password.trim().length() >= 5;
     }
 
     private boolean isPasswordsValid(String password, String passwordRepeat) {
         return password.equals(passwordRepeat);
-    }
-
-    public void register() {
-
     }
 }

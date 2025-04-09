@@ -1,6 +1,6 @@
 package com.example.takeanumbrella.data.model;
 
-import com.example.takeanumbrella.ui.register.RegisteredUser;
+import com.example.takeanumbrella.ui.register.RegisteredClient;
 
 /**
  * Class that requests authentication and user information from the remote data source and
@@ -13,7 +13,7 @@ public class RegisterRepository {
 
     // If user credentials will be cached in local storage, it is recommended it be encrypted
     // @see https://developer.android.com/training/articles/keystore
-    private LoggedInUser user = null;
+    private RegisteredClient user = null;
 
     // private constructor : singleton access
     private RegisterRepository(RegisterDataSource dataSource) {
@@ -27,25 +27,25 @@ public class RegisterRepository {
         return instance;
     }
 
-    private void setLoggedInUser(LoggedInUser user) {
+    private void setRegisteredInClient(RegisteredClient user) {
         this.user = user;
         // If user credentials will be cached in local storage, it is recommended it be encrypted
         // @see https://developer.android.com/training/articles/keystore
     }
 
-    public Result<RegisteredUser> register(
+    public Result<RegisteredClient> register(
             String name,
             String phone,
             String email,
             String password) {
-        Result<RegisteredUser> result = dataSource.register(
+        Result<RegisteredClient> result = dataSource.register(
                 name,
                 phone,
                 email,
                 password
         );
         if (result instanceof Result.Success) {
-            setLoggedInUser(((Result.Success<LoggedInUser>) result).getData());
+            setRegisteredInClient(((Result.Success<RegisteredClient>) result).getData());
         }
         return result;
     }

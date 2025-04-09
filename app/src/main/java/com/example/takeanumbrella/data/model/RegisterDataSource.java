@@ -3,13 +3,13 @@ package com.example.takeanumbrella.data.model;
 import com.example.takeanumbrella.data.Client.Client;
 import com.example.takeanumbrella.data.Client.ClientController;
 import com.example.takeanumbrella.data.Client.ClientTestResponse;
-import com.example.takeanumbrella.ui.register.RegisteredUser;
+import com.example.takeanumbrella.ui.register.RegisteredClient;
 
 import java.io.IOException;
 
 public class RegisterDataSource {
 
-    public Result<RegisteredUser> register(
+    public Result<RegisteredClient> register(
             String name,
             String phone,
             String email,
@@ -19,7 +19,7 @@ public class RegisterDataSource {
             Client client = new Client(name, phone, email, password);
             ClientTestResponse response = ClientController.testClient(client);
             if (response.getResult()) {
-                Client freshCLient = response.getClient();
+                RegisteredClient freshCLient = response.getRegisteredClient();
                 return new Result.Success<>(freshCLient);
             } else {
                 return new Result.Error(new RuntimeException("Client not registered"));
