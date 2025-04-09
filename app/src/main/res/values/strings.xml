@@ -48,7 +48,7 @@
     <string name="prompt_register_name">Имя</string>
     <string name="prompt_register_phone_hint">+79999999999</string>
     <string name="prompt_register_phone">Телефон</string>
-    <string name="prompt_register_email_hint">ivan@mmail.ru</string>
+    <string name="prompt_register_email_hint">ivan@mail.ru</string>
     <string name="prompt_register_email">Почта</string>
     <string name="prompt_register_password_hint">********</string>
     <string name="prompt_register_password">Придумайте пароль</string>
@@ -61,7 +61,7 @@
     <string name="email_invalid">"Неверный формат почты!"</string>
     <string name="invalid_password">Пароль должен содержать минимум 5 знаков</string>
     <string name="invalid_passwordRepeat">"Пароли не совпадают"</string>
-    <string name="welcome_register">"Welcome!"</string>
+    <string name="welcome_register">"Добро пожаловать"</string>
     <string name="registration_failed">Регистрация неудачна</string>
 
 
