@@ -5,6 +5,7 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_login">
 
+    <!-- Bottom Nav Destinations -->
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.takeanumbrella.ui.home.HomeFragment"
@@ -22,6 +23,9 @@
         android:name="com.example.takeanumbrella.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
+
+
+    <!-- Login & Register  (not in bottom navigation bar) -->
     <fragment
         android:id="@+id/navigation_login"
         android:name="com.example.takeanumbrella.ui.login.LoginFragment"
