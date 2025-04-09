@@ -4,8 +4,8 @@
     <!-- Strings related to Home -->
     <string name="title_home">Home</string>
 
-    <!-- Strings related to Umbrellas -->
-    <string name="title_umbrellas">Umbrellas</string>
+    <!-- Strings related to Rental Locations -->
+    <string name="title_rental_locations">Rental locations</string>
     <string name="search_hint">Начните ввод адреса</string>
 
     <string name="rentalPlaceAddress">Location address: </string>

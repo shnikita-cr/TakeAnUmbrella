@@ -1,4 +1,4 @@
-package com.example.takeanumbrella.ui.umbrellas;
+package com.example.takeanumbrella.ui.rentallocations;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -14,19 +14,19 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.takeanumbrella.R;
 import com.example.takeanumbrella.data.RentalLocation.RentalLocation;
-import com.example.takeanumbrella.databinding.FragmentUmbrellasBinding;
+import com.example.takeanumbrella.databinding.FragmentRentalLocationsBinding;
 
 import java.util.ArrayList;
 
-public class UmbrellasFragment extends Fragment {
+public class RentalLocationsFragment extends Fragment {
 
-    private FragmentUmbrellasBinding binding;
+    private FragmentRentalLocationsBinding binding;
     private ArrayList<RentalLocation> rentalLocations;
     private SearchView searchView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentUmbrellasBinding.inflate(inflater, container, false);
+        binding = FragmentRentalLocationsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         ListView rentalLocationList = binding.rentalLocationList;
         searchView = binding.searchView;
@@ -47,17 +47,17 @@ public class UmbrellasFragment extends Fragment {
         });
 
 
-        RentalLocationAdapter adapter = new RentalLocationAdapter(getContext(), R.layout.fragment_umbrellas_places_item, rentalLocations);
+        RentalLocationsAdapter adapter = new RentalLocationsAdapter(getContext(), R.layout.fragment_umbrellas_places_item, rentalLocations);
         rentalLocationList.setAdapter(adapter);
 
         return root;
     }
 
     private void loadRentalLocations(String query) {
-        UmbrellasViewModel umbrellasViewModel =
-                new ViewModelProvider(this).get(UmbrellasViewModel.class);
+        RentalLocationsViewModel rentalLocationsViewModel =
+                new ViewModelProvider(this).get(RentalLocationsViewModel.class);
 
-        umbrellasViewModel.getRentalLocations(query).observe(getViewLifecycleOwner(), locations -> {
+        rentalLocationsViewModel.getRentalLocations(query).observe(getViewLifecycleOwner(), locations -> {
             Log.i("Umbrellas OnCreateFragment", "searchQuery " + query);
             rentalLocations.clear();
             if (locations != null)

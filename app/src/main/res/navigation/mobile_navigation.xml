@@ -14,9 +14,9 @@
 
     <fragment
         android:id="@+id/navigation_umbrellas"
-        android:name="com.example.takeanumbrella.ui.umbrellas.UmbrellasFragment"
-        android:label="@string/title_umbrellas"
-        tools:layout="@layout/fragment_umbrellas" />
+        android:name="com.example.takeanumbrella.ui.rentallocations.RentalLocationsFragment"
+        android:label="@string/title_rental_locations"
+        tools:layout="@layout/fragment_rental_locations" />
 
     <fragment
         android:id="@+id/navigation_profile"
