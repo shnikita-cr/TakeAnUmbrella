@@ -4,11 +4,11 @@ import androidx.annotation.NonNull;
 
 public class Client {
 
-    private Long id;
     final private String name;
     final private String phone;
     final private String email;
     final private String passwordHash;
+    private Long id;
 
     public Client(Long id, String name, String phone, String email, String passwordHash) {
         this.id = id;
@@ -26,16 +26,16 @@ public class Client {
         phone = null;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public Client(String name, String phone, String email, String passwordHash) {
         this.id = null;
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.passwordHash = passwordHash;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
