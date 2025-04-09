@@ -20,6 +20,8 @@ import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.takeanumbrella.R;
 import com.example.takeanumbrella.databinding.FragmentLoginBinding;
@@ -49,6 +51,7 @@ public class LoginFragment extends Fragment {
         final EditText usernameEditText = binding.loginEmail;
         final EditText passwordEditText = binding.loginPassword;
         final Button loginButton = binding.loginButton;
+        final Button registerButton = binding.registerButton;
         final ProgressBar loadingProgressBar = binding.loading;
 
         loginViewModel.getLoginFormState().observe(getViewLifecycleOwner(), new Observer<LoginFormState>() {
@@ -120,6 +123,14 @@ public class LoginFragment extends Fragment {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
+            }
+        });
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadingProgressBar.setVisibility(View.VISIBLE);
+                NavController navController = NavHostFragment.findNavController(requireParentFragment());
+                navController.navigate(R.id.navigation_register);
             }
         });
     }

@@ -19,6 +19,8 @@ import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.takeanumbrella.R;
 import com.example.takeanumbrella.databinding.FragmentRegisterBinding;
@@ -161,10 +163,12 @@ public class RegisterFragment extends Fragment {
 
     private void updateUiWithUser(RegisteredUserView model) {
         String welcome = getString(R.string.welcome_register) + ", " + model.getDisplayName() + "!";
-        // TODO : initiate successful registered experience
         if (getContext() != null && getContext().getApplicationContext() != null) {
             Toast.makeText(getContext().getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
         }
+
+        NavController navController = NavHostFragment.findNavController(this);
+        navController.navigate(R.id.navigation_home);
     }
 
     private void showRegisterFailed(@StringRes Integer errorString) {
