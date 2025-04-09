@@ -144,6 +144,9 @@ public class LoginFragment extends Fragment {
         if (getContext() != null && getContext().getApplicationContext() != null) {
             Toast.makeText(getContext().getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
         }
+
+        NavController navController = NavHostFragment.findNavController(this);
+        navController.navigate(R.id.navigation_home);
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {
