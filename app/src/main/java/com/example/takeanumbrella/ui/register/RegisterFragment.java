@@ -62,7 +62,7 @@ public class RegisterFragment extends Fragment {
         registerButton = binding.registerButton;
         loadingProgressBar = binding.loading;
 
-//        registerButton.setEnabled(false);
+        registerButton.setEnabled(false);
 
         registerViewModel.getRegisterFormState().observe(getViewLifecycleOwner(), new Observer<RegisterFormState>() {
             @Override
