@@ -25,7 +25,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.takeanumbrella.R;
 import com.example.takeanumbrella.databinding.FragmentLoginBinding;
-import com.example.takeanumbrella.ui.userview.UserView;
+import com.example.takeanumbrella.ui.userview.ClientView;
 
 public class LoginFragment extends Fragment {
 
@@ -140,7 +140,7 @@ public class LoginFragment extends Fragment {
         });
     }
 
-    private void updateUiWithUser(UserView model) {
+    private void updateUiWithUser(ClientView model) {
         String welcome = getString(R.string.welcome_login) + model.getDisplayName();
         if (getContext() != null && getContext().getApplicationContext() != null) {
             Toast.makeText(getContext().getApplicationContext(), welcome, Toast.LENGTH_LONG).show();

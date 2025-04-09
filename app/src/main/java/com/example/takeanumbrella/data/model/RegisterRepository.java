@@ -27,9 +27,9 @@ public class RegisterRepository {
         return instance;
     }
 
-    private void setRegisteredInClient(Client user) {
-        this.user = user;
-        // If user credentials will be cached in local storage, it is recommended it be encrypted
+    private void setRegisteredInClient(Client client) {
+        this.user = client;
+        // If client credentials will be cached in local storage, it is recommended it be encrypted
         // @see https://developer.android.com/training/articles/keystore
     }
 

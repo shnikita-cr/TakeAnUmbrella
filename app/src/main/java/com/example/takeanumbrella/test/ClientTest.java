@@ -13,7 +13,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class UserTest {
+public class ClientTest {
     public void test() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)

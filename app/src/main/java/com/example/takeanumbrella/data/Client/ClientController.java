@@ -61,7 +61,7 @@ public class ClientController {
         public void onResponse(Call<Client> call, Response<Client> response) {
             if (response.isSuccessful()) {
                 Client client = response.body();
-                Log.i("UserResponseSuccess", client.toString());
+                Log.i("ClientResponseSuccess", client.toString());
             } else {
                 // Обработка ошибки
             }
@@ -78,7 +78,7 @@ public class ClientController {
         public void onResponse(Call<ClientTestResponse> call, Response<ClientTestResponse> response) {
             if (response.isSuccessful()) {
                 ClientTestResponse client = response.body();
-                Log.i("UserResponseSuccess", client.toString());
+                Log.i("ClientResponseSuccess", client.toString());
             } else {
                 // Обработка ошибки
             }
