@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.takeanumbrella.R;
+import com.example.takeanumbrella.data.Client.Client;
 import com.example.takeanumbrella.data.model.RegisterRepository;
 import com.example.takeanumbrella.data.model.Result;
 
@@ -28,10 +29,10 @@ public class RegisterViewModel extends ViewModel {
     }
 
     public void register(String name, String phone, String email, String password) {
-        Result<RegisteredClient> result = registerRepository.register(name, phone, email, password);
+        Result<Client> result = registerRepository.register(name, phone, email, password);
         if (result instanceof Result.Success) {
-            RegisteredClient data = ((Result.Success<RegisteredClient>) result).getData();
-            registerResult.setValue(new RegisterResult(new RegisteredUserView(data.getDisplayName())));
+            Client client = ((Result.Success<Client>) result).getData();
+            registerResult.setValue(new RegisterResult(new RegisteredUserView(client.getName())));
         } else {
             registerResult.setValue(new RegisterResult(R.string.registration_failed));
         }

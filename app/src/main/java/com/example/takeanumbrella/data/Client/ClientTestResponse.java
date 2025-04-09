@@ -1,12 +1,10 @@
 package com.example.takeanumbrella.data.Client;
 
-import com.example.takeanumbrella.ui.register.RegisteredClient;
-
 public class ClientTestResponse {
     Boolean result;
-    RegisteredClient client;
+    Client client;
 
-    public ClientTestResponse(Boolean result, RegisteredClient client) {
+    public ClientTestResponse(Boolean result, Client client) {
         this.result = result;
         this.client = client;
     }
@@ -20,7 +18,7 @@ public class ClientTestResponse {
         return result;
     }
 
-    public RegisteredClient getRegisteredClient() {
+    public Client getRegisteredClient() {
         return client;
     }
 }

@@ -38,6 +38,10 @@ public class Client {
         this.passwordHash = passwordHash;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @NonNull
     @Override
     public String toString() {

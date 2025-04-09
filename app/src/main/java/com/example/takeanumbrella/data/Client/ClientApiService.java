@@ -15,5 +15,5 @@ public interface ClientApiService {
     Call<ClientTestResponse> testClient(@Body Client client);
 
     @POST("clients/new")
-    Call<Client> createClient(@Body Client client);
+    Call<Client> registerClient(@Body Client client);
 }
