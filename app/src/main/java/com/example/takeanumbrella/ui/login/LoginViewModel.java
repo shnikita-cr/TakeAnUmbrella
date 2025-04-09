@@ -34,8 +34,8 @@ public class LoginViewModel extends ViewModel {
         Result<Client> result = loginRepository.login(username, password);
 
         if (result instanceof Result.Success) {
-            Client data = ((Result.Success<Client>) result).getData();
-            loginResult.setValue(new LoginResult(new LoggedInUserView(data.getName())));
+            Client client = ((Result.Success<Client>) result).getData();
+            loginResult.setValue(new LoginResult(new LoggedInUserView(client.getName())));
         } else {
             loginResult.setValue(new LoginResult(R.string.login_failed));
         }
