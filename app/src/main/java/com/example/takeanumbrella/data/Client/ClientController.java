@@ -69,7 +69,7 @@ public class ClientController {
 
         @Override
         public void onFailure(Call<Client> call, Throwable t) {
-            Log.e("UserResponseFailure", t.toString());
+            Log.e("ClientResponseFailure", t.toString());
         }
     }
 
