@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.takeanumbrella.R;
-import com.example.takeanumbrella.data.model.LoggedInClient;
+import com.example.takeanumbrella.data.Client.Client;
 import com.example.takeanumbrella.data.model.LoginRepository;
 import com.example.takeanumbrella.data.model.Result;
 
@@ -31,11 +31,11 @@ public class LoginViewModel extends ViewModel {
 
     public void login(String username, String password) {
         // can be launched in a separate asynchronous job
-        Result<LoggedInClient> result = loginRepository.login(username, password);
+        Result<Client> result = loginRepository.login(username, password);
 
         if (result instanceof Result.Success) {
-            LoggedInClient data = ((Result.Success<LoggedInClient>) result).getData();
-            loginResult.setValue(new LoginResult(new LoggedInUserView(data.getDisplayName())));
+            Client data = ((Result.Success<Client>) result).getData();
+            loginResult.setValue(new LoginResult(new LoggedInUserView(data.getName())));
         } else {
             loginResult.setValue(new LoginResult(R.string.login_failed));
         }
@@ -43,7 +43,7 @@ public class LoginViewModel extends ViewModel {
 
     public void loginDataChanged(String username, String password) {
         if (!isUserNameValid(username)) {
-            loginFormState.setValue(new LoginFormState(R.string.invalid_username, null));
+            loginFormState.setValue(new LoginFormState(R.string.invalid_email, null));
         } else if (!isPasswordValid(password)) {
             loginFormState.setValue(new LoginFormState(null, R.string.invalid_password));
         } else {
@@ -51,18 +51,18 @@ public class LoginViewModel extends ViewModel {
         }
     }
 
-    private boolean isUserNameValid(String username) {
-        if (username == null) {
+    private boolean isUserNameValid(String email) {
+        if (email == null) {
             return false;
         }
-        if (username.contains("@")) {
-            return Patterns.EMAIL_ADDRESS.matcher(username).matches();
+        if (email.contains("@")) {
+            return Patterns.EMAIL_ADDRESS.matcher(email).matches();
         } else {
-            return !username.trim().isEmpty();
+            return !email.trim().isEmpty();
         }
     }
 
     private boolean isPasswordValid(String password) {
-        return password != null && password.trim().length() > 5;
+        return password != null && password.trim().length() >= 5;
     }
 }

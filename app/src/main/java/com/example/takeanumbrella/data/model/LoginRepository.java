@@ -1,5 +1,7 @@
 package com.example.takeanumbrella.data.model;
 
+import com.example.takeanumbrella.data.Client.Client;
+
 /**
  * Class that requests authentication and user information from the remote data source and
  * maintains an in-memory cache of login status and user credentials information.
@@ -12,7 +14,7 @@ public class LoginRepository {
 
     // If user credentials will be cached in local storage, it is recommended it be encrypted
     // @see https://developer.android.com/training/articles/keystore
-    private LoggedInClient user = null;
+    private Client user = null;
 
     // private constructor : singleton access
     private LoginRepository(LoginDataSource dataSource) {
@@ -35,17 +37,17 @@ public class LoginRepository {
         dataSource.logout();
     }
 
-    private void setLoggedInUser(LoggedInClient user) {
+    private void setLoggedInUser(Client user) {
         this.user = user;
         // If user credentials will be cached in local storage, it is recommended it be encrypted
         // @see https://developer.android.com/training/articles/keystore
     }
 
-    public Result<LoggedInClient> login(String username, String password) {
+    public Result<Client> login(String username, String password) {
         // handle login
-        Result<LoggedInClient> result = dataSource.login(username, password);
+        Result<Client> result = dataSource.login(username, password);
         if (result instanceof Result.Success) {
-            setLoggedInUser(((Result.Success<LoggedInClient>) result).getData());
+            setLoggedInUser(((Result.Success<Client>) result).getData());
         }
         return result;
     }
