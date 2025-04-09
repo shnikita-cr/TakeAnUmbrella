@@ -10,6 +10,7 @@ import com.example.takeanumbrella.R;
 import com.example.takeanumbrella.data.Client.Client;
 import com.example.takeanumbrella.data.model.LoginRepository;
 import com.example.takeanumbrella.data.model.Result;
+import com.example.takeanumbrella.ui.userview.UserView;
 
 public class LoginViewModel extends ViewModel {
 
@@ -35,7 +36,7 @@ public class LoginViewModel extends ViewModel {
 
         if (result instanceof Result.Success) {
             Client client = ((Result.Success<Client>) result).getData();
-            loginResult.setValue(new LoginResult(new LoggedInUserView(client.getName())));
+            loginResult.setValue(new LoginResult(new UserView(client.getName())));
         } else {
             loginResult.setValue(new LoginResult(R.string.login_failed));
         }

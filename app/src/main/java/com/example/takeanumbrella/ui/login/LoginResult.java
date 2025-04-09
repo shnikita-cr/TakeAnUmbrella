@@ -2,12 +2,14 @@ package com.example.takeanumbrella.ui.login;
 
 import androidx.annotation.Nullable;
 
+import com.example.takeanumbrella.ui.userview.UserView;
+
 /**
  * Authentication result : success (user details) or error message.
  */
 class LoginResult {
     @Nullable
-    private LoggedInUserView success;
+    private UserView success;
     @Nullable
     private Integer error;
 
@@ -15,12 +17,12 @@ class LoginResult {
         this.error = error;
     }
 
-    LoginResult(@Nullable LoggedInUserView success) {
+    LoginResult(@Nullable UserView success) {
         this.success = success;
     }
 
     @Nullable
-    LoggedInUserView getSuccess() {
+    UserView getSuccess() {
         return success;
     }
 
