@@ -2,9 +2,11 @@ package com.example.takeanumbrella.ui.register;
 
 import androidx.annotation.Nullable;
 
+import com.example.takeanumbrella.ui.userview.UserView;
+
 public class RegisterResult {
     @Nullable
-    private RegisteredUserView success;
+    private UserView success;
     @Nullable
     private Integer error;
 
@@ -12,12 +14,12 @@ public class RegisterResult {
         this.error = error;
     }
 
-    RegisterResult(@Nullable RegisteredUserView success) {
+    RegisterResult(@Nullable UserView success) {
         this.success = success;
     }
 
     @Nullable
-    RegisteredUserView getSuccess() {
+    UserView getSuccess() {
         return success;
     }
 

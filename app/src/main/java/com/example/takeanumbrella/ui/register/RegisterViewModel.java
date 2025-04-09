@@ -10,6 +10,7 @@ import com.example.takeanumbrella.R;
 import com.example.takeanumbrella.data.Client.Client;
 import com.example.takeanumbrella.data.model.RegisterRepository;
 import com.example.takeanumbrella.data.model.Result;
+import com.example.takeanumbrella.ui.userview.UserView;
 
 public class RegisterViewModel extends ViewModel {
     private final MutableLiveData<RegisterFormState> registerFormState = new MutableLiveData<>();
@@ -32,7 +33,7 @@ public class RegisterViewModel extends ViewModel {
         Result<Client> result = registerRepository.register(name, phone, email, password);
         if (result instanceof Result.Success) {
             Client client = ((Result.Success<Client>) result).getData();
-            registerResult.setValue(new RegisterResult(new RegisteredUserView(client.getName())));
+            registerResult.setValue(new RegisterResult(new UserView(client.getName())));
         } else {
             registerResult.setValue(new RegisterResult(R.string.registration_failed));
         }
