@@ -5,8 +5,10 @@ import android.util.Log;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.takeanumbrella.data.RentalLocation.Coordinates;
 import com.example.takeanumbrella.data.RentalLocation.RentalLocation;
 import com.example.takeanumbrella.data.RentalLocation.RentalLocationController;
+import com.example.takeanumbrella.data.RentalLocation.RentalLocationStatus;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -48,7 +50,13 @@ public class RentalLocationsViewModel extends ViewModel {
     }
 
     public MutableLiveData<List<RentalLocation>> getRentalLocations(String searchQuery) {
-        loadRentalLocations(searchQuery);
+//        loadRentalLocations(searchQuery);
+        rentalLocations = new MutableLiveData<>(List.of(
+                new RentalLocation("address 1", new Coordinates(0, 0), RentalLocationStatus.OPEN, 53L),
+                new RentalLocation("address 2", new Coordinates(0, 0), RentalLocationStatus.OPEN, 38L),
+                new RentalLocation("address 3", new Coordinates(0, 0), RentalLocationStatus.OPEN, 53L)
+        ));
+
         return rentalLocations;
     }
 
