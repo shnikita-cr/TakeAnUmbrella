@@ -41,31 +41,22 @@ class RentalHistoryAdapter extends ArrayAdapter<Rental> {
         final Rental rental = rentalList.get(position);
 
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        viewHolder.rentalNumber.setText("#" + "12345");
+        viewHolder.rentalNumber.setText("№" + "12345");
         viewHolder.rentalStartDate.setText(new SimpleDateFormat("yyyy.MM.dd").format(timestamp));
-        viewHolder.rentalCostViewValue.setText("50 USD");
-        viewHolder.rentalDurationValue.setText("50 minutes");
-        viewHolder.rentalStatusValue.setText("OK");
+        viewHolder.rentalCostViewValue.setText("50");
+        viewHolder.rentalDurationValue.setText("50:34");
 
         return convertView;
     }
 
     private static class ViewHolder {
-        final TextView rentalNumber, rentalStartDate, rentalCostViewValue, rentalDurationValue, rentalStatusValue;
+        final TextView rentalNumber, rentalStartDate, rentalCostViewValue, rentalDurationValue;
 
         ViewHolder(View view) {
             rentalNumber = view.findViewById(R.id.rentalNumber);
             rentalCostViewValue = view.findViewById(R.id.rentalCostViewValue);
             rentalStartDate = view.findViewById(R.id.rentalStartDate);
             rentalDurationValue = view.findViewById(R.id.rentalDurationValue);
-            rentalStatusValue = view.findViewById(R.id.rentalStatusValue);
-            view.findViewById(R.id.rental_button).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.d("demo", "onClick: Click for more" + "detail");
-                }
-            });
-
         }
     }
 }

@@ -26,10 +26,10 @@
     <string name="title_profile">Profile</string>
 
     <!-- Strings related to ProfileHistoryItem -->
-    <string name="rental_cost_view_text">Rental cost:</string>
-    <string name="rental_duration_view_text">Rental duration:</string>
-    <string name="rental_status">Rental status</string>
-    <string name="detail">View details</string>
+    <string name="rental_cost_view_text">Стоимость:</string>
+    <string name="rental_duration_view_text">Время:</string>
+    <string name="rental_address_text">Место аренды:</string>
+    <string name="rental_address_text_value">город, улица, дом</string>
 
     <!-- Strings related to login -->
     <string name="title_login">Вход</string>
@@ -66,4 +66,6 @@
     <string name="invalid_passwordRepeat">"Пароли не совпадают"</string>
     <string name="welcome_register">"Добро пожаловать"</string>
     <string name="registration_failed">Регистрация неудачна</string>
+
+
 </resources>
