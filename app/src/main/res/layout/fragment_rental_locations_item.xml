@@ -14,6 +14,7 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="7dp"
             android:background="#F9E8D3">
 
             <TableRow
@@ -47,7 +48,7 @@
                             tools:text="Локация №" />
 
                         <TextView
-                            android:id="@+id/locationListNumber"
+                            android:id="@+id/rentalLocationListNumberValue"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="#000000"
@@ -67,13 +68,13 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/rentalPlaceAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="Адрес" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/rentalPlaceAddressValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minWidth="110dp"
@@ -90,14 +91,14 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:id="@+id/rentalDurationView"
+                    android:id="@+id/vacantUmbrellasCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:minWidth="110dp"
                     tools:text="Доступных зонтиков: " />
 
                 <TextView
-                    android:id="@+id/rentalDurationValue"
+                    android:id="@+id/vacantUmbrellasCountValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -106,7 +107,9 @@
                 <Button
                     android:id="@+id/showButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="38dp"
+                    android:textSize="12dp"
+                    android:backgroundTint="#ED802A"
                     tools:text="Показать" />
 
             </TableRow>
