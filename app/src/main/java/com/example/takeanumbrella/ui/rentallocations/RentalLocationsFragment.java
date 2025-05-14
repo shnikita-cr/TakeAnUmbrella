@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.SearchView;
+import androidx.appcompat.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -22,6 +22,7 @@ public class RentalLocationsFragment extends Fragment {
 
     private FragmentRentalLocationsBinding binding;
     private ArrayList<RentalLocation> rentalLocations;
+
     private SearchView searchView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -31,6 +32,7 @@ public class RentalLocationsFragment extends Fragment {
         ListView rentalLocationList = binding.rentalLocationList;
         searchView = binding.searchView;
         searchView.clearFocus();
+        loadRentalLocations(""); // for demonstration
         rentalLocations = new ArrayList<>();
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -47,7 +49,7 @@ public class RentalLocationsFragment extends Fragment {
         });
 
 
-        RentalLocationsAdapter adapter = new RentalLocationsAdapter(getContext(), R.layout.fragment_umbrellas_places_item, rentalLocations);
+        RentalLocationsAdapter adapter = new RentalLocationsAdapter(getContext(), R.layout.fragment_rental_locations_item, rentalLocations);
         rentalLocationList.setAdapter(adapter);
 
         return root;

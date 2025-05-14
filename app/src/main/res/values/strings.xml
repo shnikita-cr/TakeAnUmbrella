@@ -6,18 +6,21 @@
 
     <!-- Strings related to Rental Locations -->
     <string name="title_rental_locations">Rental locations</string>
-    <string name="search_hint">Начните ввод адреса</string>
+    <string name="search_hint">Поиск…</string>
 
-    <string name="rentalPlaceAddress">Location address: </string>
+    <string name="rentalPlaceAddress">Адрес: </string>
     <string name="rentalPlaceAddressValue">Васильевский остров, Средний проспект, 5</string>
 
-    <string name="vacantUmbrellasCount">Vacant umbrellas: </string>
+    <string name="vacantUmbrellasCount">Доступных зонтиков: </string>
     <string name="vacantUmbrellasCountValue">154</string>
 
-    <string name="rentalLocationListNumber">Location #: </string>
+    <string name="rentalLocationListNumber">Локация №</string>
     <string name="rentalLocationListNumberValue">344</string>
 
-    <string name="goToLocation">Go to Location</string>
+    <string name="goToLocation">Показать</string>
+
+    <string name="wind_blows">Ветер воет?</string>
+    <string name="umbrella_covers">Зонт укроет!</string>
 
     <!-- Strings related to Profile -->
     <string name="title_profile">Profile</string>
@@ -63,6 +66,4 @@
     <string name="invalid_passwordRepeat">"Пароли не совпадают"</string>
     <string name="welcome_register">"Добро пожаловать"</string>
     <string name="registration_failed">Регистрация неудачна</string>
-
-
 </resources>
