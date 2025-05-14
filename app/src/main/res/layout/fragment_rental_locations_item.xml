@@ -2,20 +2,26 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/frame_stroke_bg"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="12dp">
+
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="3dp"
+        app:cardElevation="0dp">
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="7dp"
-            android:background="#F9E8D3">
+            android:background="#F9E8D3"
+            android:padding="7dp">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -43,17 +49,19 @@
                             android:id="@+id/textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="@string/rentalLocationListNumber"
                             android:textColor="#000000"
                             android:textStyle="bold"
-                            tools:text="Локация №" />
+                            tools:text="rentalLocationListNumber" />
 
                         <TextView
                             android:id="@+id/rentalLocationListNumberValue"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="@string/rentalLocationListNumberValue"
                             android:textColor="#000000"
                             android:textStyle="bold"
-                            tools:text="12345" />
+                            tools:text="rentalLocationListNumberValue" />
                     </TableRow>
                 </TableLayout>
 
@@ -71,14 +79,16 @@
                     android:id="@+id/rentalPlaceAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Адрес" />
+                    android:text="@string/rentalPlaceAddress"
+                    tools:text="@string/rentalPlaceAddress" />
 
                 <TextView
                     android:id="@+id/rentalPlaceAddressValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minWidth="110dp"
-                    tools:text="Город, улица, дом" />
+                    android:text="@string/rentalPlaceAddressValue"
+                    tools:text="@string/rentalPlaceAddressValue" />
 
             </TableRow>
 
@@ -95,7 +105,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:minWidth="110dp"
-                    tools:text="Доступных зонтиков: " />
+                    android:text="@string/vacantUmbrellasCount"
+                    tools:text="@string/vacantUmbrellasCount" />
 
                 <TextView
                     android:id="@+id/vacantUmbrellasCountValue"
@@ -108,9 +119,10 @@
                     android:id="@+id/showButton"
                     android:layout_width="wrap_content"
                     android:layout_height="38dp"
-                    android:textSize="12dp"
                     android:backgroundTint="#ED802A"
-                    tools:text="Показать" />
+                    android:textSize="12sp"
+                    android:text="@string/goToLocation"
+                    tools:text="@string/goToLocation" />
 
             </TableRow>
 

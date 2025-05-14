@@ -50,8 +50,8 @@ public class RentalLocationsViewModel extends ViewModel {
     }
 
     public MutableLiveData<List<RentalLocation>> getRentalLocations(String searchQuery) {
-//        loadRentalLocations(searchQuery);
-        rentalLocations = new MutableLiveData<>(List.of(
+//        loadRentalLocations(searchQuery); // for demonstration disabled
+        rentalLocations = new MutableLiveData<>(List.of( // for demonstration
                 new RentalLocation("address 1", new Coordinates(0, 0), RentalLocationStatus.OPEN, 53L),
                 new RentalLocation("address 2", new Coordinates(0, 0), RentalLocationStatus.OPEN, 38L),
                 new RentalLocation("address 3", new Coordinates(0, 0), RentalLocationStatus.OPEN, 53L)

@@ -32,6 +32,7 @@ public class RentalLocationsFragment extends Fragment {
         ListView rentalLocationList = binding.rentalLocationList;
         searchView = binding.searchView;
         searchView.clearFocus();
+        loadRentalLocations(""); // for demonstration
         rentalLocations = new ArrayList<>();
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {

@@ -51,7 +51,7 @@
                     android:id="@+id/textView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/sd"
+                    android:text="@string/wind_blows"
                     android:textColor="#000000"
                     android:textSize="36sp" />
 
@@ -59,7 +59,7 @@
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/sdd"
+                    android:text="@string/umbrella_covers"
                     android:textColor="#000000"
                     android:textSize="36sp" />
             </LinearLayout>
@@ -67,40 +67,44 @@
     </LinearLayout>
 
 
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="250dp"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.85">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:layout_height="55dp"
+            android:background="@drawable/search_bg"
+            app:queryHint="@string/search_hint" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="50dp" />
+
         <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            android:layout_marginTop="500dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.85">
-
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/searchView"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:background="@drawable/search_bg"
-                app:queryHint="Поиск..." />
-
-            <Space
+            <ListView
+                android:id="@+id/rentalLocationList"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <ListView
-                    android:id="@+id/rentalLocationList"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:divider="#00000000"
+                android:dividerHeight="16dp"
+                android:padding="8dp"/>
         </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
