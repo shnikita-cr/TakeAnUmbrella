@@ -63,6 +63,8 @@
     <string name="invalid_passwordRepeat">"Пароли не совпадают"</string>
     <string name="welcome_register">"Добро пожаловать"</string>
     <string name="registration_failed">Регистрация неудачна</string>
+    <string name="sd">Ветер воет?</string>
+    <string name="sdd">Зонт укроет!</string>
 
 
 </resources>

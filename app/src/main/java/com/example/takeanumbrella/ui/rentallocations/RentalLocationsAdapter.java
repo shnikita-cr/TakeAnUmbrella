@@ -38,19 +38,19 @@ public class RentalLocationsAdapter extends ArrayAdapter<RentalLocation> {
 
         final RentalLocation rentalLocation = rentalLocationList.get(position);
 
-        viewHolder.rentalLocationListNumberValue.setText(String.valueOf(position + 1));
-        viewHolder.rentalPlaceAddressValue.setText(rentalLocation.getAdress());
-        viewHolder.vacantUmbrellasCountValue.setText(String.valueOf(rentalLocation.getValidUmbrellaCount()));
+//        viewHolder.rentalLocationListNumberValue.setText(String.valueOf(position + 1));
+//        viewHolder.rentalPlaceAddressValue.setText(rentalLocation.getAdress());
+//        viewHolder.vacantUmbrellasCountValue.setText(String.valueOf(rentalLocation.getValidUmbrellaCount()));
         return convertView;
     }
 
     private static class ViewHolder {
-        final TextView rentalPlaceAddressValue, vacantUmbrellasCountValue, rentalLocationListNumberValue;
+//        final TextView rentalPlaceAddressValue, vacantUmbrellasCountValue, rentalLocationListNumberValue;
 
         ViewHolder(View view) {
-            rentalPlaceAddressValue = view.findViewById(R.id.rentalPlaceAddressValue);
-            vacantUmbrellasCountValue = view.findViewById(R.id.vacantUmbrellasCountValue);
-            rentalLocationListNumberValue = view.findViewById(R.id.rentalLocationListNumberValue);
+//            rentalPlaceAddressValue = view.findViewById(R.id.rentalPlaceAddressValue);
+//            vacantUmbrellasCountValue = view.findViewById(R.id.vacantUmbrellasCountValue);
+//            rentalLocationListNumberValue = view.findViewById(R.id.rentalLocationListNumberValue);
         }
     }
 }
